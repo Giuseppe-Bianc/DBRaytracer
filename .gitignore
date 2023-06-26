@@ -420,7 +420,6 @@ FodyWeavers.xsd
 /external/spdlog/INSTALL
 /external/spdlog/LICENSE
 /external/spdlog/README.md
-/src/headers.h
 /external/spdlog/tests
 /external/spdlog/logos
 /external/spdlog/scripts
@@ -432,3 +431,5 @@ FodyWeavers.xsd
 /external/SDL/WhatsNew.txt
 /external/spdlog/include/spdlog/cfg/argv.h
 /external/glm/util
+/bin-int/
+/bin
