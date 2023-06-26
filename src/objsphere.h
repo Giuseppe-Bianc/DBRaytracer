@@ -6,7 +6,7 @@ public:
     ObjSphere() = default;
     virtual ~ObjSphere() override = default;
     virtual bool TestIntersection(const Ray &castRay, glm::dvec3 &intPoint, glm::dvec3 &localNormal,
-                                  SDL_Color &localColor) const override;
+                                  SDL_Color &localColor) const noexcept override;
 
 private:
 };

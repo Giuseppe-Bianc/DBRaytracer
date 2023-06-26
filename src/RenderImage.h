@@ -21,7 +21,7 @@ public:
 
 private:
     // SDL_Color ConvertColor(const double red, const double green, const double blue) const noexcept;
-    void InitTexture();
+    void InitTexture() noexcept;
 
 private:
     // Arrays to store image data.

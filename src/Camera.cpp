@@ -15,10 +15,10 @@ void Camera::UpdateCameraGeometry() {
     m_projectionScreenV *= (m_cameraHorzSize / m_cameraAspectRatio);
 }
 
-bool Camera::GenerateRay(double proScreenX, double proScreenY, Ray &cameraRay) const {
+bool Camera::GenerateRay(double proScreenX, double proScreenY, Ray &cameraRay) const noexcept {
     // Compute the location of the screen point in world coordinates.
-    glm::dvec3 screenWorldPart1 = m_projectionScreenCentre + (m_projectionScreenU * proScreenX);
-    glm::dvec3 screenWorldCoordinate = screenWorldPart1 + (m_projectionScreenV * proScreenY);
+    const glm::dvec3 screenWorldPart1 = m_projectionScreenCentre + (m_projectionScreenU * proScreenX);
+    const glm::dvec3 screenWorldCoordinate = screenWorldPart1 + (m_projectionScreenV * proScreenY);
 
     // Use this point along with the camera position to compute the ray.
     cameraRay.m_point1 = m_cameraPosition;

@@ -21,13 +21,13 @@ void RenderImage::SetPixel(const int x, const int y, const SDL_Color &color) { m
 
 void RenderImage::Display() {
     // Allocate memory for a pixel buffer.
-    std::vector<SDL_Color> tempPixels{C_ST(m_xSize * m_ySize), {0, 0, 0, 0}};
+    std::vector<SDL_Color> tempPixels{C_ST(C_ST(m_xSize) * m_ySize), {0, 0, 0, 0}};
     std::size_t index{};
 
 #pragma omp parallel for
-    for(int x = 0; x < m_xSize; ++x) {
-        for(int y = 0; y < m_ySize; ++y) {
-            index = (y * m_xSize) + x;
+    for(std::size_t x = 0; x < m_xSize; ++x) {
+        for(std::size_t y = 0; y < m_ySize; ++y) {
+            index = C_ST((y * m_xSize) + x);
             tempPixels[index] = m_colorData[x][y];
         }
     }
@@ -36,12 +36,12 @@ void RenderImage::Display() {
     SDL_UpdateTexture(m_pTexture, nullptr, tempPixels.data(), C_I(m_xSize) * sizeof(SDL_Color));
 
     // Copy the texture to the renderer.
-    SDL_Rect srcRect{0, 0, m_xSize, m_ySize};
+    const SDL_Rect srcRect{0, 0, m_xSize, m_ySize};
     SDL_Rect bounds;
     bounds = srcRect;
     SDL_RenderCopy(m_pRenderer, m_pTexture, &srcRect, &bounds);
 }
-void RenderImage::InitTexture() {
+void RenderImage::InitTexture() noexcept {
     // Delete any previously created texture.
     if(m_pTexture != nullptr)
         SDL_DestroyTexture(m_pTexture);

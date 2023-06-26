@@ -150,25 +150,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\CApp.h" />
     <ClInclude Include="src\Camera.h" />
-    <ClInclude Include="src\objsphere.h" />
-    <ClInclude Include="src\objectbase.h" />
-    <ClInclude Include="src\Scene.h" />
     <ClInclude Include="src\Ray.h" />
     <ClInclude Include="src\RenderImage.h" />
-    <ClInclude Include="src\CApp.h" />
+    <ClInclude Include="src\Scene.h" />
     <ClInclude Include="src\Timer.h" />
     <ClInclude Include="src\headers.h" />
+    <ClInclude Include="src\objectbase.h" />
+    <ClInclude Include="src\objsphere.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\CApp.cpp" />
     <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="src\objectbase.cpp" />
-    <ClCompile Include="src\objsphere.cpp" />
-    <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\Ray.cpp" />
     <ClCompile Include="src\RenderImage.cpp" />
-    <ClCompile Include="src\CApp.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\objectbase.cpp" />
+    <ClCompile Include="src\objsphere.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

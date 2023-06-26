@@ -8,10 +8,11 @@ public:
     virtual ~ObjectBase() = default;
 
     // Function to test for intersections.
-    virtual bool TestIntersection(const Ray &castRay, glm::dvec3 &intPoint, glm::dvec3 &localNormal, SDL_Color &localColor) const;
+    virtual bool TestIntersection(const Ray &castRay, glm::dvec3 &intPoint, glm::dvec3 &localNormal,
+                                  SDL_Color &localColor) const noexcept;
 
     // Function to test whether two floating-point numbers are close to being equal.
-    bool CloseEnough(const double f1, const double f2) const;
+    bool CloseEnough(const double f1, const double f2) const noexcept;
 
     // Public member variables.
 public:
