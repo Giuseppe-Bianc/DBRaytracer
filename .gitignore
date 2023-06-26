@@ -421,3 +421,14 @@ FodyWeavers.xsd
 /external/spdlog/LICENSE
 /external/spdlog/README.md
 /src/headers.h
+/external/spdlog/tests
+/external/spdlog/logos
+/external/spdlog/scripts
+/external/spdlog/bench
+/external/SDL/BUGS.txt
+/external/SDL/COPYING.txt
+/external/SDL/README-SDL.txt
+/external/SDL/README.txt
+/external/SDL/WhatsNew.txt
+/external/spdlog/include/spdlog/cfg/argv.h
+/external/glm/util
